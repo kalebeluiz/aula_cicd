@@ -7,6 +7,6 @@ void testar() {
 }
 
 int main() {
-  testar();
-  return 0;
+    testar();
+    return 0;
 }
