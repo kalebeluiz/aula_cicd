@@ -1,0 +1,26 @@
+name: CI para C    
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: clonar o repositório
+      uses: actions/chackout@v3
+
+    - name: Instalar compilador GCC
+      run: sudo apt update && sudo apt install build-essential -y
+
+    - name: compilar o programa 
+      run: gcc GitHub.c -o programa
+
+    - name: Executar o programa
+      run: ./programa
+
+    - name: Executar testes automatizados 
+      run:
+        gcc -o teste teste.c
+        ./teste
